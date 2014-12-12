@@ -116,8 +116,8 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Apply these base styles to all icons */
-[class^="icon-"]:before, [class*=" icon-"]:before, [class^="fa-"]:before, [class*=" fa-"]:before {
-    font-family: "casper-icons", "FontAwesome", sans-serif;
+[class^="icon-"]:before, [class*=" icon-"]:before {
+    font-family: "casper-icons", sans-serif;
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -162,36 +162,22 @@ table { border-collapse: collapse; border-spacing: 0; }
 }
 
 /* Extended icon library with Font Awesome */
-.fa-music:before {
+[class^="fa-"]:before, [class*=" fa-"]:before {
+    font-family: "FontAwesome", sans-serif;
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    text-decoration: none !important;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
     position: relative;
     font-size: 13px;
     line-height: 0;
     margin-right: 8px;
 }
-
-.main-nav.overlay .menu-button {
-    border-color: rgba(255,255,255,0.6);
-}
-.menu-button {
-    webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    display: inline-block;
-    float: left;
-    height: 38px;
-    padding: 0 15px 0 10px;
-    border: transparent 1px solid;
-    color: #9EABB3;
-    text-align: center;
-    font-size: 12px;
-    text-transform: uppercase;
-    line-height: 35px;
-    border-radius: 3px;
-    background: rgba(0,0,0,0.1);
-    transition: all ease 0.3s;
-    margin-left: 10px;
-}
-
 
 /* ==========================================================================
    2. General - Setting up some base styles
@@ -207,7 +193,8 @@ html {
 body {
     height: 100%;
     max-height: 100%;
-    font-family: "Merriweather", serif;
+    font-family: "Nunito", "JF Black", sans-serif;
+    font-weight: 300;
     letter-spacing: 0.01rem;
     font-size: 1.8rem;
     line-height: 1.75em;
@@ -233,7 +220,8 @@ h4, h5, h6 {
     color: #2E2E2E;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Nunito", "JF Super Black", sans-serif;
+    font-weight: 700;
 }
 
 h1 {
@@ -448,9 +436,9 @@ table.plain tbody > tr:nth-child(odd) > th {
    background: transparent;
 }
 
-iframe, .fluid-width-video-wrapper {
+.fluid-width-video-wrapper {
     display: block;
-    margin: 1.75em 0;
+    margin: 0;
 }
 
 /* When a video is inside the fitvids wrapper, drop the
@@ -459,6 +447,20 @@ margin on the iframe, cause it breaks stuff. */
     margin: 0;
 }
 
+/* JustFont tricks
+http://www.justfont.com/cheats */
+.jf-loading body {
+      opacity: 0;
+      visibility: hidden;
+}
+.jf-active body {
+      opacity: 1;
+      visibility: visible;
+}
+.jf-inactive body {
+      opacity: 1;
+      visibility: visible;
+}
 
 /* ==========================================================================
    3. Utilities - These things get used a lot
@@ -494,6 +496,76 @@ margin on the iframe, cause it breaks stuff. */
     vertical-align: middle;
 }
 
+/* Media queries classes */
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+    .mobile-only {
+        display: none;
+    }
+    .note-only {
+        display: none;
+    }
+    .tablet-only {
+        display: none;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .mobile-only {
+        display: block;
+    }
+}
+@media only screen and (min-device-width : 481px) and (max-device-width : 640px) {
+    .mobile-only {
+        display: none;
+    }
+    .note-only {
+        display: none;
+    }
+    .tablet-only {
+        display: none;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .note-only {
+        display: block;
+    }
+}
+@media only screen and (min-device-width : 641px) and (max-device-width : 768px) {
+    .mobile-only {
+        display: none;
+    }
+    .note-only {
+        display: none;
+    }
+    .tablet-only {
+        display: none;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .tablet-only {
+        display: block;
+    }
+}
+@media only screen and (min-width : 769px) {
+    .mobile-only {
+        display: none;
+    }
+    .note-only {
+        display: none;
+    }
+    .tablet-only {
+        display: none;
+    }
+    .desktop-only {
+        display: none;
+    }
+    .desktop-only {
+        display: block;
+    }
+}
+
 
 /* ==========================================================================
    4. General - The main styles for the the theme
@@ -524,7 +596,6 @@ margin on the iframe, cause it breaks stuff. */
 
 .main-nav a {
     text-decoration: none;
-    font-family: 'Open Sans', sans-serif;
 }
 
 /* Create a bouncing scroll-down arrow on homepage with cover image */
@@ -648,6 +719,26 @@ margin on the iframe, cause it breaks stuff. */
     margin-right: 6px;
 }
 
+.menu-button {
+    webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    display: inline-block;
+    float: left;
+    height: 38px;
+    padding: 0 15px 0 10px;
+    border: transparent 1px solid;
+    color: #9EABB3;
+    text-align: center;
+    font-size: 12px;
+    text-transform: uppercase;
+    line-height: 35px;
+    border-radius: 3px;
+    background: rgba(0,0,0,0.1);
+    transition: all ease 0.3s;
+    margin-left: 10px;
+}
+
 /* Special styles when overlaid on an image*/
 .main-nav.overlay {
     position: absolute;
@@ -663,6 +754,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 .no-cover .main-nav.overlay,
 .no-cover .back-button,
+.no-cover .menu-button,
 .no-cover .subscribe-button {
     background: none;
 }
@@ -672,6 +764,7 @@ margin on the iframe, cause it breaks stuff. */
 }
 
 .main-nav.overlay .back-button,
+.main-nav.overlay .menu-button,
 .main-nav.overlay .subscribe-button {
     border-color: rgba(255,255,255,0.6);
 }
@@ -685,6 +778,7 @@ margin on the iframe, cause it breaks stuff. */
 
 /* Add a border to the buttons on hover */
 .back-button:hover,
+.menu-button:hover,
 .subscribe-button:hover {
     border-color: #bfc8cd;
     color: #9EABB3;
@@ -696,7 +790,7 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 5rem;
     letter-spacing: -1px;
     font-weight: 700;
-    font-family: "Open Sans", sans-serif;
+    font-family: "Nunito", "JF Super Black", sans-serif;
     color: #fff;
 }
 
@@ -705,7 +799,6 @@ margin on the iframe, cause it breaks stuff. */
     font-size: 2rem;
     line-height: 1.5em;
     font-weight: 400;
-    font-family: "Merriweather", serif;
     letter-spacing: 0.01rem;
     color: rgba(255,255,255,0.8);
 }
@@ -807,7 +900,6 @@ body:not(.post-template) .post-title {
 .post-meta {
     display: block;
     margin: 1.75rem 0 0 0;
-    font-family: "Open Sans", sans-serif;
     font-size: 1.5rem;
     line-height: 2.2rem;
     color: #9EABB3;
@@ -912,7 +1004,6 @@ body:not(.post-template) .post-title {
     overflow: hidden;
 }
 
-
 /* Tweak the .post wrapper style */
 .post-template .post {
     margin-top: 0;
@@ -925,18 +1016,64 @@ body:not(.post-template) .post-title {
     display: none;
 }
 
-.post-content .social-plugins {
+/* Floting share box */
+#share-post {
+    position: fixed;
+    width: 50px;
+    top: 80px;
+    left: 5px;
+}
+
+#share-post h4{
+    display: none;
+}
+
+#share-post a {
+    font-size: 1.8rem;
+    display: inline-block;
+    margin: 38px 0 -4px 0;
+    color: #BBC7CC;
+    text-decoration: none;
+}
+#share-post a:hover {
+    color: #50585D;
+}
+
+#share-post .fb-share-button {
+    margin-bottom: 5px
+}
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 560px) {
+    #share-post {
+        display: none;
+    }
+}
+@media only screen and (min-width : 481px) and (max-device-width : 720px) {
+    #share-post {
+        display: none;
+    }
+}
+
+.social-plugins {
     display: block;
     max-width: 100%;
     height: auto;
     margin: 0 auto;
     padding: 0;
 }
+
+.social-plugins iframe {
+    display: block;
+    margin: 5px 0;
+}
+
 .fb-comments {
     width: 600px;
     margin: 0 auto;
 }
-/* Keep images centred and within the bounds of the post-width */
+
+/* Everything in the post content, ex.
+   images, paragraphs, text decoration, strang, em... */
 .post-content img {
     display: block;
     max-width: 100%;
@@ -944,26 +1081,31 @@ body:not(.post-template) .post-title {
     margin: 0 auto;
     padding: 0.6em 0;
 }
-.post-content em {
-    text-decoration: none;
-    background: url("../images/tdeco_rl.gif") repeat-x 120% 87%;
-    padding: 0 3px;
-    padding-bottom: 3px;
-    font-style: normal;
-}
-
-.post-content strong {
-    line-height: 22px;
-    padding: 4px 2px 2px 0px;
-    letter-spacing: 1px;
-    background: url("../images/tdeco_seafoam.gif") repeat-x bottom;
-}
 /* Break out larger images to be wider than the main text column
    the class is applied with jQuery */
 .post-content .full-img {
-    width: 100%;
+    width: 126%;
     max-width: none;
-    margin: 0;
+    margin: 0 13% 0 -13%;
+}
+
+/* Text decoration for em and strong */
+.post-content em {
+    text-decoration: none;
+    background: url("../images/tdeco_rl.gif") repeat-x 120% 87%;
+    padding: 0 1px 6px 0;
+    font-style: normal;
+}
+.post-content strong {
+    line-height: 22px;
+    padding: 4px 2px 5px 0px;
+    letter-spacing: 1px;
+    background: url("../images/tdeco_seafoam.gif") repeat-x bottom;
+}
+
+/* For Videos, Facebook posts or soundcloud */
+.post-content .fb_iframe_widget, .post-content iframe, .post-content .fluid-width-video-wrapper {
+    margin-bottom: 32px;
 }
 
 /* The author credit area after the post */
@@ -1020,123 +1162,6 @@ body:not(.post-template) .post-title {
 .post-footer h4 a:hover {
     text-decoration: underline;
 }
-
-/* Drop the share links in the space to the right.
-   Doing it like this means it's easier for the author bio
-   to be flexible at smaller screen sizes while the share
-   links remain at a fixed width the whole time */
-#share-post {
-    position: fixed;
-    width: 50px;
-    top: 5%;
-    left: 5px;
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    #share-post {
-        display: none;
-    }
-}
-@media only screen and (min-width : 481px) and (max-device-width : 720px) {
-    #share-post {
-        display: none;
-    }
-}
-
-@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
-    .mobile-only {
-        display: none;
-    }
-    .note-only {
-        display: none;
-    }
-    .tablet-only {
-        display: none;
-    }
-    .desktop-only {
-        display: none;
-    }
-    .mobile-only {
-        display: block;
-    }
-}
-@media only screen and (min-device-width : 481px) and (max-device-width : 640px) {
-    .mobile-only {
-        display: none;
-    }
-    .note-only {
-        display: none;
-    }
-    .tablet-only {
-        display: none;
-    }
-    .desktop-only {
-        display: none;
-    }
-    .note-only {
-        display: block;
-    }
-}
-@media only screen and (min-device-width : 641px) and (max-device-width : 768px) {
-    .mobile-only {
-        display: none;
-    }
-    .note-only {
-        display: none;
-    }
-    .tablet-only {
-        display: none;
-    }
-    .desktop-only {
-        display: none;
-    }
-    .tablet-only {
-        display: block;
-    }
-}
-@media only screen and (min-width : 769px) {
-    .mobile-only {
-        display: none;
-    }
-    .note-only {
-        display: none;
-    }
-    .tablet-only {
-        display: none;
-    }
-    .desktop-only {
-        display: none;
-    }
-    .desktop-only {
-        display: block;
-    }
-}
-
-#share-post h4{
-    display: none;
-}
-
-#share-post a {
-    font-size: 1.8rem;
-    display: inline-block;
-    margin: 38px 0 -4px 0;
-    color: #BBC7CC;
-    text-decoration: none;
-}
-
-#share-post a:hover {
-    color: #50585D;
-}
-
-.social-plugins iframe {
-    display: block;
-    margin: 5px 0;
-}
-
-#share-post .fb-share-button {
-    margin-bottom: 5px
-}
-
 
 /* The subscribe icon on the footer */
 .subscribe {
@@ -1335,7 +1360,6 @@ body:not(.post-template) .post-title {
 /* Location, website, and link */
 .author-profile .author-meta {
     margin: 2rem 0;
-    font-family: "Merriweather", serif;
     letter-spacing: 0.01rem;
     font-size: 1.7rem;
 }
@@ -1379,7 +1403,6 @@ body:not(.post-template) .post-title {
     width: 80%;
     max-width: 710px;
     margin: 4rem auto;
-    font-family: "Open Sans", sans-serif;
     font-size: 1.3rem;
     color: #9EABB3;
     text-align: center;
@@ -1466,7 +1489,6 @@ body:not(.post-template) .post-title {
     margin: 8rem 0 0 0;
     padding: 0.5rem 15px;
     border-top: #EBF2F6 1px solid;
-    font-family: "Open Sans", sans-serif;
     font-size: 1rem;
     line-height: 1.75em;
     color: #BBC7CC;
@@ -1624,6 +1646,12 @@ body:not(.post-template) .post-title {
    11. Media Queries - Smaller than 500px
    ========================================================================== */
 
+@media only screen and (min-device-width : 320px) and (max-device-width : 400px) {
+    .subscribe-button {
+        display: none;
+    }
+}
+
 @media only screen and (max-width: 500px) {
 
     .main-header {
@@ -1656,7 +1684,8 @@ body:not(.post-template) .post-title {
     }
 
     .back-button,
-    .subscribe-button {
+    .subscribe-button,
+    .menu-button {
         height: 44px;
         line-height: 41px;
         border-radius: 0;
@@ -1664,7 +1693,8 @@ body:not(.post-template) .post-title {
         background: transparent;
     }
     .back-button:hover,
-    .subscribe-button:hover {
+    .subscribe-button:hover,
+    .menu-button:hover {
         border-color: #ebeef0;
         color: #2e2e2e;
         background: #ebeef0;
@@ -1688,11 +1718,13 @@ body:not(.post-template) .post-title {
         background: none;
     }
     .no-cover .main-nav.overlay .back-button,
+    .no-cover .main-nav.overlay .menu-button,
     .no-cover .main-nav.overlay .subscribe-button {
         border: none;
     }
 
     .main-nav.overlay .back-button,
+    .main-nav.overlay .menu-button,
     .main-nav.overlay .subscribe-button {
         border-color: transparent;
     }
