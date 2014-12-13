@@ -1124,13 +1124,10 @@ body:not(.post-template) .post-title {
 /* Break out larger images to be wider than the main text column
    the class is applied with jQuery */
 .post-content .full-img {
-    width: auto;
-    width: calc(100% + 32px); /* expand with to image + margins */
-    margin: 0 -16px 10px 0; /* get rid of margins */
-    min-width: 0;
-    max-width: 112%; /* fallback when calc doesn't work */
+    width: 126%;
+    max-width: none;
+    margin: 0 -13%;
 }
-
 
 /* Text decoration for em and strong */
 .post-content em {
