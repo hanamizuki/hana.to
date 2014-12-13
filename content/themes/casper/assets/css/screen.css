@@ -182,7 +182,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 /* ==========================================================================
    2. General - Setting up some base styles
    ========================================================================== */
-@font-face {
+/*@font-face {
     font-family: "Nunito Bold";
     src:url("../fonts/Nunito-Bold-webfont.eot");
     src:url("../fonts/Nunito-Bold-webfont.woff") format("woff"),
@@ -199,26 +199,13 @@ table { border-collapse: collapse; border-spacing: 0; }
         url("../fonts/Nunito-Light-webfont.svg") format("svg");
     font-weight: 700;
     font-style: normal;
-}
+}*/
 
 html {
     height: 100%;
     max-height: 100%;
     font-size: 62.5%;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
-}
-
-body {
-    height: 100%;
-    max-height: 100%;
-    font-family: "Nunito Light", "JF Black", sans-serif;
-    letter-spacing: 0.01rem;
-    font-size: 1.8rem;
-    line-height: 1.75em;
-    color: #3A4145;
-    -webkit-font-feature-settings: 'kern' 1;
-    -moz-font-feature-settings: 'kern' 1;
-    -o-font-feature-settings: 'kern' 1;
 }
 
 ::-moz-selection {
@@ -229,6 +216,25 @@ body {
     background: #D6EDFF;
 }
 
+body {
+    height: 100%;
+    max-height: 100%;
+    font-family: "JF Xing W3", sans-serif;
+    letter-spacing: 0.06rem;
+    font-size: 1.8rem;
+    line-height: 1.75em;
+    color: #3A4145;
+    -webkit-font-feature-settings: 'kern' 1;
+    -moz-font-feature-settings: 'kern' 1;
+    -o-font-feature-settings: 'kern' 1;
+}
+@media only screen and (max-device-width : 1024px) {
+    body {
+        font-family: "JF Xing W4", sans-serif;
+        font-size: 2rem;
+    }
+}
+
 h1, h2, h3,
 h4, h5, h6 {
     -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
@@ -237,13 +243,20 @@ h4, h5, h6 {
     color: #2E2E2E;
     line-height: 1.15em;
     margin: 0 0 0.4em 0;
+    font-family: "JF Xing W2", sans-serif;
+    font-weight: normal;
+}
+@media only screen and (max-device-width : 1024px) {
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "JF Xing W5", sans-serif;
+        font-weight: normal;
+    }
 }
 
 h1 {
     font-size: 5rem;
-    letter-spacing: -2px;
+    letter-spacing: -1px;
     text-indent: -3px;
-    font-family: "Nunito Bold", "JF Super Black", sans-serif;
 }
 
 h2 {
@@ -802,18 +815,21 @@ http://www.justfont.com/cheats */
 
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
+    font-family: "JF Albatron", sans-serif;
+    font-size: 6rem;
+    font-weight: normal;
+    letter-spacing: -3px;
     margin: 10px 0 10px 0;
-    font-size: 5rem;
-    letter-spacing: -1px;
     color: #fff;
 }
-
 .page-description {
-    margin: 0;
-    font-size: 2rem;
+    font-family: "JF Albatron", sans-serif;
+    font-weight: normal;
+    font-size: 3rem;
     line-height: 1.5em;
     letter-spacing: 0.01rem;
-    color: rgba(255,255,255,0.8);
+    margin: 0;
+    color: rgba(255,255,255,1);
 }
 
 .no-cover.main-header {
@@ -1044,7 +1060,7 @@ body:not(.post-template) .post-title {
 #share-post a {
     font-size: 1.8rem;
     display: inline-block;
-    margin: 38px 0 -4px 0;
+    margin: 26px 0 -4px 0;
     color: #BBC7CC;
     text-decoration: none;
 }
@@ -1092,14 +1108,14 @@ body:not(.post-template) .post-title {
     max-width: 100%;
     height: auto;
     margin: 0 auto;
-    padding: 0.6em 0;
+    padding: 0;
 }
 /* Break out larger images to be wider than the main text column
    the class is applied with jQuery */
 .post-content .full-img {
     width: 126%;
     max-width: none;
-    margin: 0 13% 0 -13%;
+    margin: 0 13% 10px -13%;
 }
 
 /* Text decoration for em and strong */
