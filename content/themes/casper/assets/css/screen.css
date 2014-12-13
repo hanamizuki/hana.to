@@ -944,7 +944,7 @@ body:not(.post-template) .post-title {
 
 .post-meta {
     display: block;
-    margin: 1.75rem 0 0 0;
+    margin: 0.75rem 0 0 0;
     font-size: 1.3rem;
     line-height: 2.2rem;
     color: #9EABB3;
@@ -1030,10 +1030,6 @@ body:not(.post-template) .post-title {
 
 .post-template .post-title {
     margin-bottom: 0;
-}
-
-.post-template .post-meta {
-    margin: 0;
 }
 
 .post-template .post-date {
