@@ -815,12 +815,17 @@ http://www.justfont.com/cheats */
 
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
-    font-family: "JF Albatron", sans-serif;
+    font-family: "JF Xing W2", sans-serif;
     font-size: 6rem;
     font-weight: normal;
-    letter-spacing: -3px;
+    letter-spacing: -6px;
     margin: 10px 0 10px 0;
     color: #fff;
+}
+@media only screen and (max-device-width : 1024px) {
+    body {
+        font-family: "JF Xing W3", sans-serif;
+    }
 }
 .page-description {
     font-family: "JF Albatron", sans-serif;
@@ -1113,10 +1118,13 @@ body:not(.post-template) .post-title {
 /* Break out larger images to be wider than the main text column
    the class is applied with jQuery */
 .post-content .full-img {
-    width: 126%;
-    max-width: none;
-    margin: 0 13% 10px -13%;
+    width: auto;
+    width: calc(100% + 32px); /* expand with to image + margins */
+    margin: 0 -16px 10px 0; /* get rid of margins */
+    min-width: 0;
+    max-width: 112%; /* fallback when calc doesn't work */
 }
+
 
 /* Text decoration for em and strong */
 .post-content em {
@@ -1862,7 +1870,7 @@ body:not(.post-template) .post-title {
     .post-content .full-img {
         width: auto;
         width: calc(100% + 32px); /* expand with to image + margins */
-        margin: 0 -16px; /* get rid of margins */
+        margin: 0 -16px 10px -16px; /* get rid of margins */
         min-width: 0;
         max-width: 112%; /* fallback when calc doesn't work */
     }
