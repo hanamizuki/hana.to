@@ -1127,9 +1127,14 @@ body:not(.post-template) .post-title {
 /* Break out larger images to be wider than the main text column
    the class is applied with jQuery */
 .post-content .full-img {
-    width: 126%;
+    width:  calc(126% + 2px);
+    border: 1px solid #d5dbde;
+    border-top: 1px solid #E0E2E3;
+    border-left: 1px solid #DDE2E4;
+    padding: 1.5%;
     max-width: none;
-    margin: 0 -13% 10px -13%;
+    margin: 7px calc(-14.25% - 1px) 10px calc(-14.25% - 1px);
+    border-radius: 3px;
 }
 
 /* Text decoration for em and strong */
@@ -1879,6 +1884,8 @@ body:not(.post-template) .post-title {
         margin: 0 -16px 10px -16px; /* get rid of margins */
         min-width: 0;
         max-width: 112%; /* fallback when calc doesn't work */
+        border: 0;
+        padding: 0;
     }
 
     .post-meta {
