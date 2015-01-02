@@ -10,7 +10,7 @@
 
     <h4>Share this post</h4>
     <!-- Facebook -->
-    <div class="fb-share-button" data-layout="box_count"></div>
+    <div class="fb-share-button" data-href="{{url absolute="true"}}" data-layout="box_count"></div>
     <!-- Twitter -->
     <a href="https://twitter.com/share" class="twitter-share-button" data-via="hanamizuki" data-count="vertical">Tweet</a><script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
     <!-- Google Plus -->
@@ -38,7 +38,7 @@
                 發表：<time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="MM/DD/YYYY h:mm a"}}</time>{{tags prefix=" | 標籤："}}
             </section>
             <section class="social-plugins">
-                <div class="fb-like" data-width="710" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
+                <div class="fb-like" data-width="710" data-layout="standard" data-action="like" data-show-faces="true" data-share="true" data-href="{{url absolute="true"}}"></div>
             </section>
         </header>
 
